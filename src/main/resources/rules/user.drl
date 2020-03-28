@@ -1,0 +1,10 @@
+package rules
+
+import com.zglu.drools.User;
+
+rule "sex must not be null!"
+    when
+        $address : User(sex == null)
+    then
+        throw new RuntimeException("sex must not be null!");
+end
